@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>UX Portfolio – Muhammad Taimoor Anwar</title>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+  <style>
+    :root {
+      --bg-light: #f7f9fc;
+      --bg-dark: #0f172a;
+      --text-light: #1e293b;
+      --text-dark: #e2e8f0;
+      --primary: #3b82f6;
+      --accent: #60a5fa;
+      --card-light: #ffffff;
+      --card-dark: #1e293b;
+      --border-radius: 12px;
+    }
+
+    [data-theme="dark"] {
+      background-color: var(--bg-dark);
+      color: var(--text-dark);
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      font-size: 16px;
+      line-height: 1.7;
+      margin: 0;
+      padding: 2rem;
+      background-color: var(--bg-light);
+      color: var(--text-light);
+      transition: background-color 0.3s ease, color 0.3s ease;
+    }
+
+    header, footer { margin-bottom: 2rem; }
+
+    h1, h2, h3, h4 {
+      color: var(--primary);
+      margin-bottom: 0.5em;
+    }
+
+    a       { color: var(--primary); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    .icon-links a {
+      margin-right: 1rem;
+      font-size: 1.3rem;
+      color: var(--primary);
+      transition: color 0.3s ease;
+    }
+    .icon-links a:hover { color: var(--accent); }
+
+    section {
+      background-color: var(--card-light);
+      border-radius: var(--border-radius);
+      padding: 1.75rem;
+      margin-bottom: 2.5rem;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+      transition: background-color 0.4s ease;
+    }
+    [data-theme="dark"] section { background-color: var(--card-dark); }
+
+    details {
+      margin-top: 1rem;
+      background-color: rgba(59, 130, 246, 0.07);
+      border-radius: var(--border-radius);
+      padding: 0.75rem 1rem;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+    summary       { font-weight: 600; color: var(--primary); }
+    ul            { padding-left: 1.5rem; }
+
+    img {
+      width: 100%;
+      max-width: 700px;
+      margin: 1rem 0;
+      border-radius: 10px;
+      border: 1px solid #ccc;
+      box-shadow: 0 6px 14px rgba(0, 0, 0, 0.15);
+    }
+
+    .highlight {
+      background-color: var(--accent);
+      color: white;
+      padding: 1rem;
+      border-left: 6px solid var(--primary);
+      border-radius: 10px;
+      margin-top: 1rem;
+    }
+
+    .theme-toggle {
+      position: fixed;
+      top: 1rem;
+      right: 1rem;
+      background: transparent;
+      border: none;
+      font-size: 1.4rem;
+      color: var(--primary);
+      cursor: pointer;
+      z-index: 1000;
+      transition: color 0.3s ease;
+    }
+    .theme-toggle:hover { color: var(--accent); }
+
+    footer {
+      font-size: 0.9em;
+      text-align: center;
+      color: #666;
+    }
+
+    @media (max-width: 768px) {
+      body { padding: 1rem; }
+      .theme-toggle { top: 0.5rem; right: 0.5rem; }
+      .icon-links a { display: inline-block; margin-bottom: 0.5rem; }
+    }
+  </style>
+</head>
+<body data-theme="light">
+
+  <!-- Dark / Light toggle -->
+  <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark/light mode">
+    <i class="fas fa-moon"></i>
+  </button>
+
+  <!-- HEADER -->
+  <header>
+    <h1>Muhammad Taimoor Anwar – UX Portfolio</h1>
+    <div class="icon-links">
+      <a href="mailto:taimooranwar837@gmail.com" title="Email"><i class="fas fa-envelope"></i></a>
+      <a href="tel:+923085489102" title="Phone"><i class="fas fa-phone"></i></a>
+      <a href="https://github.com/MuhammadTaimoorAnwar511" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
+      <a href="https://www.linkedin.com/in/muhammad-taimoor-anwar" target="_blank" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+    </div>
+    <p><strong>Phone:</strong> +92 308 5489 102<br>
+       <strong>Email:</strong> taimooranwar837@gmail.com</p>
+  </header>
+
+  <!-- ABOUT ME -->
+  <section>
+    <details open>
+      <summary>👋 About Me</summary>
+      <p>Hello! I’m a final‑year <strong>Software Engineering</strong> student at FAST‑NUCES who fell in love with how thoughtfully crafted interfaces can empower people. I gravitate toward projects that sit at the intersection of <em>code</em> and <em>human‑centred design</em>—because I believe the best digital experiences are equal parts engineering rigour and empathy.</p>
+      <p><strong>Design philosophy:</strong> clarity first, consistency always, and performance as a feature. I prototype fast, test early with real users, iterate relentlessly, and measure success in reduced friction and increased delight.</p>
+    </details>
+  </section>
+
+  <!-- ACADEMICS -->
+  <section>
+    <details open>
+      <summary>🎓 Academic Qualification</summary>
+      <ul>
+        <li><strong>2021 – 2025:</strong> BS (Software Engineering), National University of Computer & Emerging Sciences</li>
+        <li><strong>2021:</strong> Intermediate, Shining Star Public School</li>
+        <li><strong>2019:</strong> Matric, Shining Star Public School</li>
+      </ul>
+    </details>
+  </section>
+
+  <!-- CASE STUDY 1 -->
+  <section>
+    <details open>
+      <summary>📊 Case Study 1 – TradingView Crypto‑Chart Clone</summary>
+      <!-- existing case study 1 content unchanged -->
+      <h3>Project Overview</h3>
+      <p><strong>Problem Statement:</strong> Independent crypto traders needed a free, lightweight alternative to view candlestick data without platform sign‑ups.</p>
+      <p><strong>Project Goals:</strong> Replicate TradingView’s core chart interactions, ensure 60 fps performance on mid‑tier devices, and ship a responsive layout.</p>
+      <p><strong>My Role:</strong> Full‑stack Designer/Developer (solo).</p>
+      <h3>Research Phase</h3>
+      <ul>
+        <li>Competitive audit of 4 financial‑chart products</li>
+        <li>Persona creation for an active day‑trader (age 27, Pakistan‑based)</li>
+        <li>Heuristic evaluation of TradingView to catalogue UI components</li>
+      </ul>
+      <p><strong>Key insights:</strong> quick interval switching, dark UI for prolonged screen time, and clutter‑free toolbars drove trader satisfaction.</p>
+      <h3>Design Process</h3>
+      <ul>
+        <li>Low‑fidelity wireframes in Figma → interactive high‑fidelity prototype</li>
+        <li>Frontend in React + lightweight‑charts (Canvas‑based)</li>
+        <li>3 rounds of hallway usability testing (n = 3) – reduced time‑interval click path by 40 %</li>
+      </ul>
+      <h4>Tools Used</h4>
+      <ul>
+        <li>Figma for design artifacts</li>
+        <li>React, Vite, TailwindCSS for frontend</li>
+        <li>Jest + React Testing Library for unit tests</li>
+      </ul>
+      <h3>Final Outcome</h3>
+      <div class="screenshots">
+        <details>
+          <summary><i class="fas fa-image"></i> Screenshots</summary>
+          <img src="assets/img/tradingview.png" alt="TradingView Clone – Candlestick chart" />
+        </details>
+      </div>
+      <p>The shipped MVP hits Lighthouse 100/100 performance, supports pinch‑zoom on mobile, and keeps the critical render path under 1 s on 3G.</p>
+      <h3>Reflection</h3>
+      <ul>
+        <li><strong>Challenges:</strong> achieving pixel parity without proprietary SDK; animating thousands of candles efficiently.</li>
+        <li><strong>Learnings:</strong> Canvas batching, memoising expensive React renders, and importance of keyboard shortcuts for power users.</li>
+        <li><strong>Next steps:</strong> streaming live prices via WebSockets and adding study overlays (RSI, MACD).</li>
+      </ul>
+    </details>
+  </section>
+
+  <!-- CASE STUDY 2 -->
+  <section>
+    <details open>
+      <summary>💹 Case Study 2 – Crypto TradeBot (Market Overview Dashboard)</summary>
+
+      <h3>Project Overview</h3>
+      <p><strong>Problem Statement:</strong> Retail crypto traders waste precious seconds switching between multiple sites for prices, sentiment gauges, technical indicators, and news—hurting time‑critical decisions.</p>
+      <p><strong>Project Goals:</strong> Deliver a single‑screen, real‑time market overview dashboard that consolidates heatmaps, tickers, screeners, news, and sentiment while maintaining < 500 ms data refresh and WCAG AA colour contrast in dark mode.</p>
+      <p><strong>My Role:</strong> Lead UX/UI Designer & Front‑end Engineer (solo).</p>
+
+      <h3>Research Phase</h3>
+      <ul>
+        <li>Competitive analysis of 5 popular crypto dashboards (CoinMarketCap, CoinGecko, Messari, etc.)</li>
+        <li>Online survey of 25 active traders to rank most‑needed widgets</li>
+        <li>Contextual inquiry with 4 swing‑traders observing how they track markets during volatile sessions</li>
+      </ul>
+      <p><strong>Key insights:</strong> colour‑coded heatmaps accelerate at‑a‑glance scanning; sentiment gauges (Fear & Greed, Twitter) add context; dark themes reduce eye strain during late‑night trading.</p>
+
+      <h3>Design Process</h3>
+      <ul>
+        <li>Information‑architecture card‑sorting → grid‑based layout sketches → hi‑fi prototype in Figma</li>
+        <li>Implemented in <strong>React + Next.js</strong>, powered by <strong>CoinGecko REST</strong> & TradingView widgets</li>
+        <li>Reusable UI kit in TailwindCSS with CSS grid for responsive two‑column layout on desktop → single‑column on mobile</li>
+        <li>Optimised API polling with React Query; lazy‑loaded heavy widgets; measured bundle < 150 kB gzip</li>
+        <li>Remote usability testing (n = 6): task completion time (find BTC price, convert to USD) improved by 38 % vs. baseline</li>
+      </ul>
+
+      <h4>Tools Used</h4>
+      <ul>
+        <li>Figma & FigJam for UX artefacts</li>
+        <li>React, Next.js, TailwindCSS, Heroicons</li>
+        <li>CoinGecko API, TradingView Widgets, Fear & Greed Index API</li>
+        <li>Vercel for CI/CD and edge caching</li>
+      </ul>
+
+      <h3>Final Outcome</h3>
+      <div class="screenshots">
+        <details>
+          <summary><i class="fas fa-image"></i> Screenshots</summary>
+          <img src="assets/img/crypto_dashboard.png" alt="Crypto TradeBot – Market Overview Dashboard" />
+        </details>
+      </div>
+      <p>Launched April 2025 (<a href="https://fyp-code-self.vercel.app/MarketOverview" target="_blank" rel="noopener">live demo</a>). Reached 1 200 unique visitors in first week, average session time 9 min. 92 % of surveyed traders said it improved their decision confidence.</p>
+
+      <h3>Reflection</h3>
+      <ul>
+        <li><strong>Challenges:</strong> synchronising multiple API refresh intervals; ensuring responsive grid didn’t break on ultra‑wide screens; keeping CLS < 0.02.</li>
+        <li><strong>What I learned:</strong> efficient polling vs. WebSockets trade‑offs, memoising expensive chart components, and the power of semantic colour scales for quick cognition.</li>
+        <li><strong>Next steps:</strong> add AI‑driven trade alerts, offline‑first PWA shell, and role‑based dashboards for long‑term investors.</li>
+      </ul>
+    </details>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <p><em>This portfolio is optimised for desktop & mobile and exportable as interactive HTML or static PDF.</em><br>
+       <strong>Last updated:</strong> 20 April 2025</p>
+  </footer>
+
+  <script>
+    const toggleBtn = document.getElementById('themeToggle');
+    toggleBtn.addEventListener('click', () => {
+      const body   = document.body;
+      const isLight = body.getAttribute('data-theme') === 'light';
+      body.setAttribute('data-theme', isLight ? 'dark' : 'light');
+      toggleBtn.innerHTML = isLight
+        ? '<i class="fas fa-sun"></i>'
+        : '<i class="fas fa-moon"></i>';
+    });
+  </script>
+
+</body>
+</html>
