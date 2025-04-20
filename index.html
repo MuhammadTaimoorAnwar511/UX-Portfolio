@@ -1,11 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
+  <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>UX Portfolio – Muhammad Taimoor Anwar</title>
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet"/>
   <style>
+    /* CSS variables */
     :root {
       --bg-light: #f7f9fc;
       --bg-dark: #0f172a;
@@ -18,6 +19,7 @@
       --border-radius: 12px;
     }
 
+    /* Theme styles */
     [data-theme="dark"] {
       background-color: var(--bg-dark);
       color: var(--text-dark);
@@ -34,15 +36,22 @@
       transition: background-color 0.3s ease, color 0.3s ease;
     }
 
-    header, footer { margin-bottom: 2rem; }
+    header, footer {
+      margin-bottom: 2rem;
+    }
 
     h1, h2, h3, h4 {
       color: var(--primary);
       margin-bottom: 0.5em;
     }
 
-    a       { color: var(--primary); text-decoration: none; }
-    a:hover { text-decoration: underline; }
+    a {
+      color: var(--primary);
+      text-decoration: none;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
 
     .icon-links a {
       margin-right: 1rem;
@@ -50,7 +59,9 @@
       color: var(--primary);
       transition: color 0.3s ease;
     }
-    .icon-links a:hover { color: var(--accent); }
+    .icon-links a:hover {
+      color: var(--accent);
+    }
 
     section {
       background-color: var(--card-light);
@@ -60,7 +71,9 @@
       box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
       transition: background-color 0.4s ease;
     }
-    [data-theme="dark"] section { background-color: var(--card-dark); }
+    [data-theme="dark"] section {
+      background-color: var(--card-dark);
+    }
 
     details {
       margin-top: 1rem;
@@ -70,8 +83,13 @@
       cursor: pointer;
       transition: background-color 0.3s ease;
     }
-    summary       { font-weight: 600; color: var(--primary); }
-    ul            { padding-left: 1.5rem; }
+    summary {
+      font-weight: 600;
+      color: var(--primary);
+    }
+    ul {
+      padding-left: 1.5rem;
+    }
 
     img {
       width: 100%;
@@ -103,18 +121,108 @@
       z-index: 1000;
       transition: color 0.3s ease;
     }
-    .theme-toggle:hover { color: var(--accent); }
-
-    footer {
-      font-size: 0.9em;
-      text-align: center;
-      color: #666;
+    .theme-toggle:hover {
+      color: var(--accent);
     }
 
+    /* Header & profile pic */
+    header {
+      position: relative;
+      padding: 2rem 1.5rem;
+    }
+    .profile-pic {
+      position: absolute;
+      top: 1.5rem;
+      right: 1.5rem;
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      background-color: #edf2f7;
+      background-image: url("assets/img/profile.png");
+      background-size: cover;
+      background-position: center;
+      border: 3px solid #3b82f6;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+
+    /* Download CV button */
+    .btn-cv {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.75rem 1.5rem;
+      font-size: 1rem;
+      font-weight: 600;
+      text-decoration: none;
+      color: #fff;
+      background: linear-gradient(135deg, #3b82f6 0%, #60a5fa 100%);
+      border-radius: 9999px;
+      box-shadow: 0 4px 14px rgba(59, 130, 246, 0.25);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+    .btn-cv i {
+      transition: transform 0.2s ease;
+    }
+    .btn-cv:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(59, 130, 246, 0.35);
+    }
+    .btn-cv:hover i {
+      transform: rotate(-20deg) scale(1.1);
+    }
+    .btn-cv:active {
+      transform: translateY(0);
+      box-shadow: 0 4px 14px rgba(59, 130, 246, 0.25);
+    }
+
+    /* Tools‑used badges */
+    .tools-used {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+    .tools-used .tool {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: rgba(59, 130, 246, 0.1);
+      padding: 0.4rem 0.8rem;
+      border-radius: var(--border-radius);
+      font-size: 0.95rem;
+    }
+    .tools-used .tool img {
+      width: 24px;
+      height: 24px;
+    }
+
+    /* MOBILE RESPONSIVE ADJUSTMENTS */
     @media (max-width: 768px) {
-      body { padding: 1rem; }
-      .theme-toggle { top: 0.5rem; right: 0.5rem; }
-      .icon-links a { display: inline-block; margin-bottom: 0.5rem; }
+      body {
+        padding: 1rem;
+      }
+      .theme-toggle {
+        top: 0.5rem;
+        right: 0.5rem;
+      }
+      .icon-links a {
+        display: inline-block;
+        margin-bottom: 0.5rem;
+      }
+      header {
+        padding: 1rem;
+      }
+      .profile-pic {
+        position: static;
+        display: block;
+        margin: 0 auto 1rem;
+        width: 80px;
+        height: 80px;
+      }
+      .btn-cv {
+        width: 100%;
+        justify-content: center;
+      }
     }
   </style>
 </head>
@@ -127,15 +235,27 @@
 
   <!-- HEADER -->
   <header>
+    <!-- Profile Photo Placeholder -->
+    <div class="profile-pic"></div>
+
     <h1>Muhammad Taimoor Anwar – UX Portfolio</h1>
     <div class="icon-links">
       <a href="mailto:taimooranwar837@gmail.com" title="Email"><i class="fas fa-envelope"></i></a>
       <a href="tel:+923085489102" title="Phone"><i class="fas fa-phone"></i></a>
       <a href="https://github.com/MuhammadTaimoorAnwar511" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
       <a href="https://www.linkedin.com/in/muhammad-taimoor-anwar" target="_blank" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+      <a href="https://melodic-frangollo-40edff.netlify.app/" target="_blank" title="Full-Stack Portfolio">
+        <i class="fas fa-laptop-code"></i>
+      </a>
     </div>
-    <p><strong>Phone:</strong> +92 308 5489 102<br>
-       <strong>Email:</strong> taimooranwar837@gmail.com</p>
+    <p>
+      <strong>Phone:</strong> +92 308 5489 102<br>
+      <strong>Email:</strong> taimooranwar837@gmail.com
+    </p>
+    <a href="assets/img/Taimoor Anwar.pdf" download class="btn-cv">
+      <i class="fas fa-download"></i>
+      Download CV
+    </a>
   </header>
 
   <!-- ABOUT ME -->
@@ -163,11 +283,12 @@
   <section>
     <details open>
       <summary>📊 Case Study 1 – TradingView Crypto‑Chart Clone</summary>
-      <!-- existing case study 1 content unchanged -->
+
       <h3>Project Overview</h3>
       <p><strong>Problem Statement:</strong> Independent crypto traders needed a free, lightweight alternative to view candlestick data without platform sign‑ups.</p>
       <p><strong>Project Goals:</strong> Replicate TradingView’s core chart interactions, ensure 60 fps performance on mid‑tier devices, and ship a responsive layout.</p>
       <p><strong>My Role:</strong> Full‑stack Designer/Developer (solo).</p>
+
       <h3>Research Phase</h3>
       <ul>
         <li>Competitive audit of 4 financial‑chart products</li>
@@ -175,32 +296,54 @@
         <li>Heuristic evaluation of TradingView to catalogue UI components</li>
       </ul>
       <p><strong>Key insights:</strong> quick interval switching, dark UI for prolonged screen time, and clutter‑free toolbars drove trader satisfaction.</p>
+
       <h3>Design Process</h3>
       <ul>
         <li>Low‑fidelity wireframes in Figma → interactive high‑fidelity prototype</li>
         <li>Frontend in React + lightweight‑charts (Canvas‑based)</li>
         <li>3 rounds of hallway usability testing (n = 3) – reduced time‑interval click path by 40 %</li>
       </ul>
+
       <h4>Tools Used</h4>
-      <ul>
-        <li>Figma for design artifacts</li>
-        <li>React, Vite, TailwindCSS for frontend</li>
-        <li>Jest + React Testing Library for unit tests</li>
-      </ul>
+      <div class="tools-used">
+        <div class="tool">
+          <img src="assets/img/figma.png" alt="Figma icon">
+          <span>Figma</span>
+        </div>
+        <div class="tool">
+          <img src="assets/img/react.png" alt="React icon">
+          <span>React</span>
+        </div>
+        <div class="tool">
+          <img src="assets/img/javascript.png" alt="Vite icon">
+          <span>Vite</span>
+        </div>
+        <div class="tool">
+          <img src="assets/img/css.png" alt="TailwindCSS icon">
+          <span>TailwindCSS</span>
+        </div>
+        <div class="tool">
+          <img src="assets/img/javascript.png" alt="Jest icon">
+          <span>Jest & React Testing Library</span>
+        </div>
+      </div>
+
       <h3>Final Outcome</h3>
       <div class="screenshots">
         <details>
           <summary><i class="fas fa-image"></i> Screenshots</summary>
-          <img src="assets/img/tradingview.png" alt="TradingView Clone – Candlestick chart" />
+          <img src="assets/img/tradingview.png" alt="TradingView Clone – Candlestick chart">
         </details>
       </div>
       <p>The shipped MVP hits Lighthouse 100/100 performance, supports pinch‑zoom on mobile, and keeps the critical render path under 1 s on 3G.</p>
+
       <h3>Reflection</h3>
       <ul>
         <li><strong>Challenges:</strong> achieving pixel parity without proprietary SDK; animating thousands of candles efficiently.</li>
         <li><strong>Learnings:</strong> Canvas batching, memoising expensive React renders, and importance of keyboard shortcuts for power users.</li>
         <li><strong>Next steps:</strong> streaming live prices via WebSockets and adding study overlays (RSI, MACD).</li>
       </ul>
+
     </details>
   </section>
 
@@ -232,21 +375,49 @@
       </ul>
 
       <h4>Tools Used</h4>
-      <ul>
-        <li>Figma & FigJam for UX artefacts</li>
-        <li>React, Next.js, TailwindCSS, Heroicons</li>
-        <li>CoinGecko API, TradingView Widgets, Fear & Greed Index API</li>
-        <li>Vercel for CI/CD and edge caching</li>
-      </ul>
+      <div class="tools-used">
+        <div class="tool">
+          <img src="assets/img/figma.png" alt="Figma icon">
+          <span>Figma & FigJam</span>
+        </div>
+        <div class="tool">
+          <img src="assets/img/react.png" alt="React icon">
+          <span>React</span>
+        </div>
+        <div class="tool">
+          <img src="assets/img/css.png" alt="TailwindCSS icon">
+          <span>TailwindCSS</span>
+        </div>
+        <div class="tool">
+          <img src="assets/img/javascript.png" alt="Next.js icon">
+          <span>Next.js</span>
+        </div>
+        <div class="tool">
+          <img src="assets/img/CoinGecko_logo.png" alt="CoinGecko icon">
+          <span>CoinGecko API</span>
+        </div>
+        <div class="tool">
+          <img src="assets/img/tradingview_1.png" alt="tradingview icon">
+          <span>TradingView Widgets</span>
+        </div>
+        <div class="tool">
+          <img src="assets/img/fear-and-greed.png" alt="fear-and-greed icon">
+          <span>Fear & Greed Index API</span>
+        </div>
+        <div class="tool">
+          <img src="assets/img/cicd.png" alt="cicd icon">
+          <span>Vercel CI/CD</span>
+        </div>
+      </div>
 
       <h3>Final Outcome</h3>
       <div class="screenshots">
         <details>
           <summary><i class="fas fa-image"></i> Screenshots</summary>
-          <img src="assets/img/crypto_dashboard.png" alt="Crypto TradeBot – Market Overview Dashboard" />
+          <img src="assets/img/crypto_dashboard.png" alt="Crypto TradeBot – Market Overview Dashboard">
         </details>
       </div>
-      <p>Launched April 2025 (<a href="https://fyp-code-self.vercel.app/MarketOverview" target="_blank" rel="noopener">live demo</a>). Reached 1 200 unique visitors in first week, average session time 9 min. 92 % of surveyed traders said it improved their decision confidence.</p>
+      <p>Launched April 2025 (<a href="https://fyp-code-self.vercel.app/MarketOverview" target="_blank" rel="noopener">live demo</a>). Reached 1 200 unique visitors in first week, average session time 9 min. 92 % of surveyed traders said it improved their decision confidence.</p>
 
       <h3>Reflection</h3>
       <ul>
@@ -254,6 +425,7 @@
         <li><strong>What I learned:</strong> efficient polling vs. WebSockets trade‑offs, memoising expensive chart components, and the power of semantic colour scales for quick cognition.</li>
         <li><strong>Next steps:</strong> add AI‑driven trade alerts, offline‑first PWA shell, and role‑based dashboards for long‑term investors.</li>
       </ul>
+
     </details>
   </section>
 
@@ -266,7 +438,7 @@
   <script>
     const toggleBtn = document.getElementById('themeToggle');
     toggleBtn.addEventListener('click', () => {
-      const body   = document.body;
+      const body = document.body;
       const isLight = body.getAttribute('data-theme') === 'light';
       body.setAttribute('data-theme', isLight ? 'dark' : 'light');
       toggleBtn.innerHTML = isLight
